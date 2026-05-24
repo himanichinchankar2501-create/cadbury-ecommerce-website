@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Cadbury E-Commerce Website</title>
 
     <style>
@@ -12,6 +14,7 @@
             padding:0;
             box-sizing:border-box;
             font-family:Arial, sans-serif;
+            scroll-behavior:smooth;
         }
 
         body{
@@ -22,26 +25,33 @@
         header{
             background-color:#4b0082;
             color:white;
-            padding:20px;
+            padding:25px;
             text-align:center;
         }
 
         header h1{
-            font-size:40px;
+            font-size:42px;
             margin-bottom:10px;
+        }
+
+        header p{
+            font-size:18px;
         }
 
         nav{
             background-color:#6a0dad;
             padding:15px;
             text-align:center;
+            position:sticky;
+            top:0;
+            z-index:1000;
         }
 
         nav a{
             color:white;
             text-decoration:none;
-            margin:0 20px;
-            font-size:18px;
+            margin:0 15px;
+            font-size:17px;
             font-weight:bold;
         }
 
@@ -51,67 +61,75 @@
 
         .banner{
             width:100%;
-            height:400px;
+            height:450px;
             background-image:url('https://images.unsplash.com/photo-1511381939415-e44015466834');
             background-size:cover;
             background-position:center;
             display:flex;
             justify-content:center;
             align-items:center;
+            text-align:center;
             color:white;
-            text-shadow:2px 2px 5px black;
+        }
+
+        .banner-content{
+            background:rgba(0,0,0,0.6);
+            padding:30px;
+            border-radius:15px;
         }
 
         .banner h2{
             font-size:50px;
-            background:rgba(0,0,0,0.5);
-            padding:20px;
-            border-radius:10px;
+            margin-bottom:15px;
         }
 
-        .about{
-            padding:50px;
-            text-align:justify;
-            line-height:1.8;
-            background:white;
+        .banner p{
+            font-size:20px;
         }
 
-        .about h2{
+        section{
+            padding:60px;
+            line-height:1.9;
+        }
+
+        section h2{
             text-align:center;
-            margin-bottom:20px;
             color:#4b0082;
-            font-size:35px;
+            margin-bottom:25px;
+            font-size:38px;
+        }
+
+        .about,
+        .history,
+        .privacy,
+        .terms{
+            background:white;
+            text-align:justify;
         }
 
         .products{
-            padding:50px;
-        }
-
-        .products h2{
-            text-align:center;
-            margin-bottom:40px;
-            color:#4b0082;
-            font-size:35px;
+            background:#f8f8f8;
         }
 
         .product-container{
             display:flex;
-            justify-content:space-around;
+            justify-content:center;
             flex-wrap:wrap;
-            gap:30px;
+            gap:35px;
+            margin-top:40px;
         }
 
         .card{
             background:white;
-            width:300px;
+            width:320px;
             border-radius:15px;
             overflow:hidden;
             box-shadow:0 5px 15px rgba(0,0,0,0.2);
-            transition:0.3s;
+            transition:0.4s;
         }
 
         .card:hover{
-            transform:scale(1.05);
+            transform:translateY(-10px);
         }
 
         .card img{
@@ -125,19 +143,15 @@
         }
 
         .card-content h3{
-            margin-bottom:10px;
             color:#4b0082;
-        }
-
-        .card-content p{
-            line-height:1.6;
+            margin-bottom:10px;
         }
 
         .price{
-            font-size:22px;
-            font-weight:bold;
-            margin-top:10px;
             color:green;
+            font-size:24px;
+            font-weight:bold;
+            margin-top:15px;
         }
 
         button{
@@ -155,30 +169,8 @@
             background:#6a0dad;
         }
 
-        .history{
-            padding:50px;
-            background:white;
-            line-height:1.8;
-            text-align:justify;
-        }
-
-        .history h2{
-            text-align:center;
-            margin-bottom:20px;
-            color:#4b0082;
-            font-size:35px;
-        }
-
         .contact{
-            padding:50px;
-            background:#eee;
-        }
-
-        .contact h2{
-            text-align:center;
-            margin-bottom:20px;
-            color:#4b0082;
-            font-size:35px;
+            background:#ececec;
         }
 
         .contact form{
@@ -190,7 +182,7 @@
         .contact textarea{
             width:100%;
             padding:15px;
-            margin:10px 0;
+            margin:12px 0;
             border-radius:8px;
             border:1px solid #ccc;
         }
@@ -199,30 +191,49 @@
             background:#4b0082;
             color:white;
             text-align:center;
-            padding:20px;
+            padding:25px;
             margin-top:20px;
         }
 
     </style>
 
 </head>
+
 <body>
 
     <header>
+
         <h1>Cadbury E-Commerce Website</h1>
+
         <p>Sweetness That Connects the World</p>
+
     </header>
 
     <nav>
+
         <a href="#">Home</a>
         <a href="#about">About</a>
         <a href="#products">Products</a>
         <a href="#history">History</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms</a>
         <a href="#contact">Contact</a>
+
     </nav>
 
     <section class="banner">
-        <h2>Welcome to the World of Cadbury</h2>
+
+        <div class="banner-content">
+
+            <h2>Welcome to the World of Cadbury</h2>
+
+            <p>
+                Explore premium chocolates, delightful sweetness,
+                and digital shopping experiences.
+            </p>
+
+        </div>
+
     </section>
 
     <section class="about" id="about">
@@ -230,19 +241,19 @@
         <h2>About the Website</h2>
 
         <p>
-            This website was created as part of an E-Commerce project to understand
-            the process of website creation and online business presentation.
-            The website focuses on Cadbury, one of the world's leading chocolate brands.
-            The purpose of this project is to demonstrate how companies use websites
-            to promote products, interact with customers, and improve digital presence.
+            This website was created as part of an E-Commerce academic project
+            to understand website creation and online business presentation.
+            The project focuses on Cadbury, one of the world's leading chocolate brands.
+            The website demonstrates how businesses use online platforms
+            to promote products and improve customer interaction.
         </p>
 
         <p>
-            The website was developed using HTML and CSS technologies.
-            HTML was used for creating the structure of the website,
-            while CSS was used for designing and styling the interface.
-            The project helped in understanding web development concepts,
-            user interface design, and the importance of e-commerce platforms.
+            The project was developed using HTML and CSS technologies.
+            HTML was used to create the structure of the website,
+            while CSS was used for styling and visual design.
+            The website helps in understanding front-end development,
+            digital branding, and e-commerce systems.
         </p>
 
     </section>
@@ -254,42 +265,66 @@
         <div class="product-container">
 
             <div class="card">
+
                 <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60" alt="Dairy Milk">
+
                 <div class="card-content">
+
                     <h3>Cadbury Dairy Milk</h3>
+
                     <p>
-                        Cadbury Dairy Milk is one of the most popular chocolates
-                        known for its rich and creamy taste.
+                        Dairy Milk is one of the most loved chocolates
+                        known for its creamy texture and rich taste.
                     </p>
+
                     <div class="price">₹100</div>
+
                     <button>Buy Now</button>
+
                 </div>
+
             </div>
 
             <div class="card">
+
                 <img src="https://images.unsplash.com/photo-1511381939415-e44015466834" alt="Silk">
+
                 <div class="card-content">
+
                     <h3>Cadbury Silk</h3>
+
                     <p>
-                        Cadbury Silk is a premium chocolate product designed
-                        for smooth and luxurious chocolate experiences.
+                        Cadbury Silk offers a smooth and luxurious
+                        chocolate experience for premium consumers.
                     </p>
+
                     <div class="price">₹180</div>
+
                     <button>Buy Now</button>
+
                 </div>
+
             </div>
 
             <div class="card">
+
                 <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b" alt="Bournville">
+
                 <div class="card-content">
+
                     <h3>Cadbury Bournville</h3>
+
                     <p>
-                        Bournville is a dark chocolate product that provides
-                        a rich cocoa flavor for chocolate lovers.
+                        Bournville provides rich dark chocolate flavor
+                        specially designed for dark chocolate lovers.
                     </p>
+
                     <div class="price">₹220</div>
+
                     <button>Buy Now</button>
+
                 </div>
+
             </div>
 
         </div>
@@ -303,22 +338,59 @@
         <p>
             Cadbury was founded in 1824 by John Cadbury in Birmingham, England.
             Initially, the company sold tea, coffee, and drinking chocolate.
-            Over time, it became one of the largest confectionery companies in the world.
-            The launch of Dairy Milk in 1905 revolutionized the chocolate industry
-            and helped the company establish a strong global identity.
+            Over time, Cadbury expanded globally and became one of the most
+            recognized confectionery brands in the world.
         </p>
 
         <p>
-            Cadbury entered the Indian market in 1948 and gradually became
-            one of the leading chocolate brands in the country.
-            Through innovative marketing campaigns and emotional branding,
-            the company successfully connected with consumers of all age groups.
+            The launch of Dairy Milk in 1905 revolutionized the chocolate industry.
+            Cadbury entered India in 1948 and gradually became one of the leading
+            chocolate brands in the country through strong marketing strategies
+            and emotional branding campaigns.
+        </p>
+
+    </section>
+
+    <section class="privacy" id="privacy">
+
+        <h2>Privacy Policy</h2>
+
+        <p>
+            This website is created for educational purposes only.
+            User information entered through the contact form
+            is not shared with third parties.
         </p>
 
         <p>
-            Today, Cadbury operates under Mondelez International and continues
-            to dominate the confectionery industry through innovation,
-            sustainability, and digital transformation.
+            Basic information such as name and email address
+            may be collected for communication purposes.
+            No financial or sensitive information is stored.
+        </p>
+
+        <p>
+            The website follows basic privacy principles
+            and aims to provide a safe browsing experience.
+        </p>
+
+    </section>
+
+    <section class="terms" id="terms">
+
+        <h2>Terms and Conditions</h2>
+
+        <p>
+            By accessing this website, users agree to use the platform
+            for educational and demonstration purposes only.
+        </p>
+
+        <p>
+            Products shown on this website are sample representations
+            and do not involve actual commercial transactions.
+        </p>
+
+        <p>
+            Unauthorized copying or misuse of website content
+            is strictly prohibited.
         </p>
 
     </section>
@@ -342,9 +414,11 @@
     </section>
 
     <footer>
+
         <p>
             © 2026 Cadbury E-Commerce Project | Created for Educational Purpose
         </p>
+
     </footer>
 
 </body>
